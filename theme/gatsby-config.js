@@ -1,5 +1,6 @@
 function GatsbyConfig(options) {
-  const { contentPath = "pages" } = options
+  // const { contentPath = "pages" } = options
+  const { syntaxHighlight = true } = options
   return {
     plugins: [
       {
@@ -10,7 +11,7 @@ function GatsbyConfig(options) {
           defaultLayouts: {
             default: require.resolve("./src/components/Layout"),
           },
-          gatsbyRemarkPlugins: [`gatsby-remark-prismjs`],
+          gatsbyRemarkPlugins: [syntaxHighlight && `gatsby-remark-prismjs`].filter(Boolean),
         },
       },
       "gatsby-plugin-theme-ui",

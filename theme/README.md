@@ -4,11 +4,19 @@
   </a>
 </p>
 
-<h1 align="center">
-  Gatsby theme MDX
-</h1>
+# Gatsby theme MDX
+
+![screenshot](./screenshot.png)
 
 Gatsby theme that let you create pages from `.mdx` files inside the `pages` directory
+
+[**DEMO**](https://gatsby-theme-mdx.netlify.com/)
+
+## Checkout how I built this theme here
+
+[![Building gatsby-theme-mdx - Part 1](../mdx_1.jpg)](https://www.youtube.com/watch?v=nSBGdZ4BICw)
+
+[![Building gatsby-theme-mdx - Part 2](../mdx_2.jpg)](https://www.youtube.com/watch?v=jKrWGaPGRDo)
 
 ## Installation
 
@@ -29,7 +37,12 @@ module.exports = {
   // ...
   plugins: [
     // ...
-    `@horacioh/gatsby-theme-mdx`,
+    {
+      resolve: `@horacioh/gatsby-theme-mdx`,
+      options: {
+        syntaxHighlight: true // (default: true) add/remove syntax highlight with `gatsby-remark-prismjs`
+      }
+    }
   ]
 }
 ```
@@ -45,7 +58,7 @@ module.exports = {
 ## This theme includes
 
 - `gatsby-plugin-mdx`: to transform `.mdx` files to pages. [docs](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
-- `gatsby-plugin-prismjs`: to style codeblocks properly. [docs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+- `gatsby-remark-prismjs`: to style codeblocks properly. [docs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
 - `gatsby-plugin-theme-ui`: base & extensable styles for theme components. [docs](https://theme-ui.com/gatsby-plugin/)
 
 ## Issues & feedback
