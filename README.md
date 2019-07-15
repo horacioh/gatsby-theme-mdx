@@ -1,58 +1,61 @@
-# Gatsby Theme Jam Submission Example
+<p align="center">
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
 
-This repo is an example and potential starting point for theme creators.
+<h1 align="center">
+  Gatsby theme MDX
+</h1>
 
-It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+Gatsby theme that let you create pages from `.mdx` files inside the `pages` directory
 
-## How to use this repo
+## Installation
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+- Install the theme
 
-1.  Fork this repo.
+```bash
+npm i --save @horacioh/gatsby-theme-mdx
+# or
+yarn add @horacioh/gatsby-theme-mdx
+```
 
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
+- Add the theme to yout `gatsby-config.js` files
 
-3.  Get the theme set up locally.
-    ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
+```bash
+# gatsby-config.js
 
-    # move into the directory
-    cd gatsby-theme-THEMENAME
+module.exports = {
+  // ...
+  plugins: [
+    // ...
+    {
+      resolve: `@horacioh/gatsby-theme-mdx`,
+      options: {
+        basePath: '/',       // this is the root on where yout `contentPath` will be created (default: '/')
+        contentPath: 'pages' // directory name for your mdx files (default: 'pages')
+      }
+    }
+  ]
+}
+```
 
-    # install dependencies
-    yarn
-    ```
+- Create `.mdx` files on your `src/pages` folder and you are all set.
 
-4.  Update `theme/package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
-    ```
+```mdx
+// pages/index.mdx
 
-5.  Start the demo site.
-    ```sh
-    yarn workspace demo develop
-    ```
+# Hello MDX page
+```
 
-    The demo will start at http://localhost:8000
+## This theme includes
 
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
+- `gatsby-plugin-mdx`: to transform `.mdx` files to pages. [docs](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
+- `gatsby-plugin-prismjs`: to style codeblocks properly. [docs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+- `gatsby-plugin-theme-ui`: base & extensable styles for theme components. [docs](https://theme-ui.com/gatsby-plugin/)
 
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
+## Issues & feedback
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
+Any questions or feedback is welcome!. please if you don't understand something or need more documentation os some utility please file [an issue](https://github.com/horacioh/gatsby-theme-mdx/issues) or send me [a tweet](https://twitter.com/hhg2288).
 
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
-
-## More information
-
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+Happy Theming!!

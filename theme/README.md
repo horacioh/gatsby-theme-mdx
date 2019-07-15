@@ -1,51 +1,61 @@
-# Gatsby Theme Jam Example Submission
+<p align="center">
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
 
-This is a bare-bones Gatsby theme to showcase how a [Theme Jam](https://themejam.gatsbyjs.org) submission should look.
+<h1 align="center">
+  Gatsby theme MDX
+</h1>
 
-See the [live demo](https://gatsby-theme-jam-example.netlify.com)
+Gatsby theme that let you create pages from `.mdx` files inside the `pages` directory
 
 ## Installation
 
-To use this theme in your Gatsby sites, follow these instructions:
+- Install the theme
 
-1.  Install the theme
-    ```sh
-    npm install --save gatsby-theme-jam-example
-    ```
+```bash
+npm i --save @horacioh/gatsby-theme-mdx
+# or
+yarn add @horacioh/gatsby-theme-mdx
+```
 
-2.  Add the theme to your `gatsby-config.js`:
-    ```js
-    module.exports = {
-      plugins: [
-        'gatsby-theme-jam-example'
-      ]
+- Add the theme to yout `gatsby-config.js` files
+
+```bash
+# gatsby-config.js
+
+module.exports = {
+  // ...
+  plugins: [
+    // ...
+    {
+      resolve: `@horacioh/gatsby-theme-mdx`,
+      options: {
+        basePath: '/',       // this is the root on where yout `contentPath` will be created (default: '/')
+        contentPath: 'pages' // directory name for your mdx files (default: 'pages')
+      }
     }
-    ```
+  ]
+}
+```
 
-3.  Start your site
-    ```sh
-    gatsby develop
-    ```
+- Create `.mdx` files on your `src/pages` folder and you are all set.
 
-## Submission Checklist
+```mdx
+// pages/index.mdx
 
-To ensure your Theme Jam submission [follows the rules](https://themejam.gatsbyjs.org/rules), use this checklist:
+# Hello MDX page
+```
 
-- [ ] Use our [accessibility guide][a11y] to ensure your site meets our accessibility standards
-- [ ] Run a performance audit using [Lighthouse][] and/or [WebPageTest][]
-- [ ] Set up a live demo using [Netlify][] or [GitHub Pages][]
-- [ ] Add installation documentation to the README
-- [ ] Update the `name` field in `package.json`
-- [ ] Update the `author` field in `package.json`
-- [ ] Update the `repository` field in `package.json`
-- [ ] Make sure the theme’s `keywords` in `package.json` include `gatsby`, `gatsby-theme`, and `gatsby-plugin`
-- [ ] Publish your theme to npm ([docs][npmpublish])
-- [ ] Submit your theme at https://themejam.gatsbyjs.org
+## This theme includes
 
-[a11y]: https://gatsbyjs.org/docs/making-your-site-accessible#how-to-improve-accessibility
-[Lighthouse]: https://developers.google.com/web/tools/lighthouse/
-[axe]: https://www.deque.com/axe/
-[WebPageTest]: http://webpagetest.org/
-[Netlify]: https://netlify.com
-[GitHub Pages]: https://pages.github.com/
-[npmpublish]: https://docs.npmjs.com/cli/publish
+- `gatsby-plugin-mdx`: to transform `.mdx` files to pages. [docs](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
+- `gatsby-plugin-prismjs`: to style codeblocks properly. [docs](https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/)
+- `gatsby-plugin-theme-ui`: base & extensable styles for theme components. [docs](https://theme-ui.com/gatsby-plugin/)
+
+## Issues & feedback
+
+Any questions or feedback is welcome!. please if you don't understand something or need more documentation os some utility please file [an issue](https://github.com/horacioh/gatsby-theme-mdx/issues) or send me [a tweet](https://twitter.com/hhg2288).
+
+Happy Theming!!
