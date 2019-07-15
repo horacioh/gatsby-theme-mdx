@@ -4,11 +4,13 @@
   </a>
 </p>
 
-<h1 align="center">
-  Gatsby theme MDX
-</h1>
+# Gatsby theme MDX
+
+![screenshot](./screenshot.png)
 
 Gatsby theme that let you create pages from `.mdx` files inside the `pages` directory
+
+[**DEMO**](https://gatsby-theme-mdx.netlify.com/)
 
 ## Installation
 
