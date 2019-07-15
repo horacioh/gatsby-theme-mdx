@@ -29,13 +29,7 @@ module.exports = {
   // ...
   plugins: [
     // ...
-    {
-      resolve: `@horacioh/gatsby-theme-mdx`,
-      options: {
-        basePath: '/',       // this is the root on where yout `contentPath` will be created (default: '/')
-        contentPath: 'pages' // directory name for your mdx files (default: 'pages')
-      }
-    }
+    `@horacioh/gatsby-theme-mdx`,
   ]
 }
 ```
