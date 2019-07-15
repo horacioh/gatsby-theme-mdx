@@ -29,20 +29,14 @@ module.exports = {
   // ...
   plugins: [
     // ...
-    {
-      resolve: `@horacioh/gatsby-theme-mdx`,
-      options: {
-        basePath: '/',       // this is the root on where yout `contentPath` will be created (default: '/')
-        contentPath: 'pages' // directory name for your mdx files (default: 'pages')
-      }
-    }
+    `@horacioh/gatsby-theme-mdx`
   ]
 }
 ```
 
 3. Create `.mdx` files on your `src/pages` folder and you are all set.
 
-```mdx
+```
 // pages/index.mdx
 
 # Hello MDX page
