@@ -14,13 +14,6 @@ function GatsbyConfig(options) {
         },
       },
       {
-        resolve: "gatsby-source-filesystem",
-        options: {
-          path: `${contentPath}`.replace(/\/\/+/g, "/"), // this replace here, is a neat technique i got from @jlengstorf (https://egghead.io/lessons/gatsby-set-up-to-create-data-driven-pages-in-gatsby)
-          name: contentPath,
-        },
-      },
-      {
         resolve: `gatsby-transformer-remark`,
         options: {
           plugins: [`gatsby-remark-prismjs`],
